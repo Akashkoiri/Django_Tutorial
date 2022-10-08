@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}
+
+{% block body %}
+<!-- <img class="front_img" src="/static/images/header.jpeg"> -->
+
+<!-- conditions -->
+<h1> 1. Conditions </h1>
+
+{% if name %}
+<h3>Hello {{name}}</h3>
+{% else %}
+<h3>Hello world</h3>
+{% endif %}
+
+<!-- loops -->
+<h1> 2. Loops in List</h1>
+
+{% for i in names %}
+<div>{{forloop.counter}}. {{i}}</div>
+{% endfor %}
+
+<!-- loops in dictionary -->
+<h1> 3. Loops in Dictionary</h1>
+
+<table border="1px" cellpadding="5">
+    <tr>
+        <th>Name</th>
+        <th>Number</th>
+    </tr>
+    {% for i in student_details %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.number}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- Conditions in loop -->
+<h1> 4. conditions in loop </h1>
+
+{% if nums|length > 0 %}
+    {% for i in nums %}
+        {% if i > 20 %}
+            <div>{{i}}</div>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    No data found
+{% endif %}
+
+
+<!--  -->
+<h1> 5. </h1>
+
+{% endblock %}
