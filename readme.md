@@ -1,6 +1,6 @@
 #
 
-## Django Tutorial - Programming with Mosh
+## Django Tutorial
 
 ### What is django?
 
