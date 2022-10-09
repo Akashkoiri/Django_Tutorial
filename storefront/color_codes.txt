@@ -1,0 +1,8 @@
+background-image: linear-gradient(to right, #8360c3, #2ebf91);
+background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+background-image: linear-gradient(to right, #00b09b, #96c93d);
+background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
+background-image: linear-gradient(to right, #0099f7, #f11712);
+background-image: linear-gradient(to right, #141e30, #243b55);

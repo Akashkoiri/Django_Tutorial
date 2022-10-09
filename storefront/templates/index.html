@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 
-{% block stylesheet %}
-    <link rel="stylesheet" href="/static/css/style.css">
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <style>
+        .text {
+            margin-top: 20%;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+    <title>ARJ Tech | Home</title>
 {% endblock %}
 
-{% block body %}
-    <div class="home">
-        <p>Hello this is {{text}}</p>
+{% block body%}
+    <div class="text">
+        <p>Welcome to ARJ Tech</p>
     </div>
 {% endblock %}

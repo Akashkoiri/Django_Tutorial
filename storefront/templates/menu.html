@@ -1,0 +1,29 @@
+{% block head %}
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <title>Animated menu</title>
+{% endblock %}
+
+{% block body %}
+    <div class="navigation">
+        <div class="toggle">
+            <span></span>
+        </div>
+        <ul>
+            <li style="--i:0;"><a href="/">Home</a></li>
+            <li style="--i:1;"><a href="/playground/about-us">About</a></li>
+            <li style="--i:2;"><a href="#">Services</a></li>
+            <li style="--i:3;"><a href="#">Work</a></li>
+            <li style="--i:4;"><a href="#">Team</a></li>
+            <li style="--i:5;"><a href="{% url 'contacts' %}">Contacts</a></li>
+        </ul>
+    </div>
+
+    <script>
+        let navigation = document.querySelector('.navigation');
+        document.querySelector('.toggle').onclick = function(){
+            this.classList.toggle('active');
+            navigation.classList.toggle('active');
+
+        }
+    </script>
+{% endblock %}

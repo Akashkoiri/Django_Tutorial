@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def home(request):
-    data = {'text' : 'Playground app'}
-    return render(request, 'index.html', data)
+def playground(request):
+    return render(request, 'card.html')
     
 def render_text(request):
     return render(request, 'result.html', {'res':'Akash'})
@@ -42,3 +41,6 @@ def login(request):
 
 def contacts(request):
     return render(request, "contacts.html")
+
+def animated_menu(request):
+    return render(request, "menu.html")

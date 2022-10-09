@@ -276,3 +276,5 @@ STATICFILES_DIRS = [
 <!-- Then we can use the url without remembering the full path -->
     <a href="{% url 'login' %}">Login</a>
 ```
+
+### 
