@@ -5,10 +5,26 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cards</title>
-        <link rel="stylesheet" href="/static/css/card.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <style>
+            body {
+                background-image: url(/static/images/gradient_circle.jpeg) !important;
+                background-size: cover;
+            }
+            section {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-wrap: wrap !important;
+                min-height: 100vh !important;
+            }
+        </style>
     </head>
 
     <body>
+        <header>
+            {% include 'menu.html' %}
+        </header>
         <section>
             <div class="container">
                 <div class="card">
@@ -69,7 +85,7 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-        <!--Til-js-->
+        <!--Tilt-js-->
         <script type="text/javascript" src="/static/js/vanilla-tilt.js"></script>
         <script type="text/javascript">
             VanillaTilt.init(document.querySelectorAll(".card"), {
@@ -78,5 +94,16 @@
                 scale: 1.05
             });
         </script>
+
+        <!-- Animated Menu -->
+        <script type="text/javascript">
+            let navigation = document.querySelector('.navigation');
+            document.querySelector('.toggle').onclick = function(){
+                this.classList.toggle('active');
+                navigation.classList.toggle('active');
+    
+            }
+        </script>
+
     </body>
 </html>

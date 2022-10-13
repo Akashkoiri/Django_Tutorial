@@ -1,0 +1,6 @@
+shortcuts:-
+    Collapse: 
+        Ctrl (Hold) + K + 0
+
+    Axpand: 
+        Ctrl (Hold) + K + leave K + j
