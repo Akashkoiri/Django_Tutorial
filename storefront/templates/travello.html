@@ -1,0 +1,32 @@
+{% load static %}
+{% static 'images' as img %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/travello.css' %}">
+    <title>Home Page</title>
+</head>
+<body>
+
+    <div class="box">
+
+        {% for dest in dests %}
+            <div class="cards">
+                {% if dest.offer %}
+                    <span>Special offer</span>
+                {% endif %}
+                <img src="{{img}}/{{dest.img}}" alt="">
+                <div class="text">
+                    <h2>{{dest.name}}</h2>
+                    <p>{{dest.desc}}</p>
+                    <p>Price: ${{dest.price}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

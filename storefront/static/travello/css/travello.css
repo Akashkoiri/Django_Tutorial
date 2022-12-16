@@ -1,0 +1,73 @@
+:root {
+    --box-back: #00ff80;
+    --card-back: rgb(176, 236, 247);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: var(--box-back);
+    position: relative;
+    min-height: 400px;
+    min-width: 800px;
+    margin: 40px;
+    padding: 20px;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.box .cards {
+    position: relative;
+    background: var(--card-back);
+    height: 390px;
+    width: 253px;
+    border-radius: 8px;
+}
+
+.box .cards span {
+    position: absolute;
+    background: #010101;
+    color: aliceblue;
+    margin: .5em;
+    padding: .5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.box .cards span:hover {
+    display: inline-block;
+    height: 10rem;
+    width: 15rem;
+    transition: .5s;
+}
+
+.box .cards img {
+    height: 250px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.box .cards .text > * {
+    margin-top: 14px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.box .cards .text p:nth-child(2) {
+    font-weight: 100;
+    margin-top: 6px;
+}

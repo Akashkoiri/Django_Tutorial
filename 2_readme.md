@@ -210,6 +210,26 @@ STATICFILES_DIRS = [
     </html>
 ```
 
+### How to manage dynamic image urls
+
+```html
+<!-- 1. Normal -->
+<img src="{% static 'travello/images/dubai.jpg' %}" alt="">
+```
+
+```html
+<!-- 2. When using inside a for loop to display multiple images -->
+{% load static %}
+{% static 'travello/images' as img %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'travello/css/travello.css' %}">
+
+{% for dest in dests %}
+<!-- <img src="/static/travello/images/dubai.jpg" alt=""> -->
+    <img src="{{img}}/{{dest.img}}" alt="">
+{% endfor %}
+```
+
 ### How to include header & footer files in all pages
 
 ```html
@@ -277,4 +297,50 @@ STATICFILES_DIRS = [
     <a href="{% url 'login' %}">Login</a>
 ```
 
-### 
+### How to use GET/POST Methods in forms?
+
+<!-- 1. GET Method -->
+```py
+# Views.py
+def add_GET(request):
+    res = int(request.GET['num1']) + int(request.GET['num2'])
+    return render(request, 'result.html', {'res':res})
+```
+```html
+<!-- login.html -->
+<form action="add" method="GET">
+    <div class="form-group">
+        <label>Enter 1st number :</label>  
+        <input type='text' class='form-control' name="num1" required>
+    </div>
+    <div class="form-group">
+        <label>Enter 2nd number :</label>  
+        <input type='text' class='form-control' name="num2" required>
+    </div>
+    <input type='submit' class="btn" value="Submit">
+</form>
+```
+
+
+<!-- 2. POST Method -->
+```py
+# Views.py
+def add_GET(request):
+    res = int(request.POST['num1']) + int(request.POST['num2'])
+    return render(request, 'result.html', {'res':res})
+```
+```html
+<!-- login.html -->
+<form action="add" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Enter 1st number :</label>  
+        <input type='text' class='form-control' name="num1" required>
+    </div>
+    <div class="form-group">
+        <label>Enter 2nd number :</label>  
+        <input type='text' class='form-control' name="num2" required>
+    </div>
+    <input type='submit' class="btn" value="Submit">
+</form>
+```
