@@ -1,0 +1,19 @@
+<h2>Stuednt Detail</h2>
+
+<a href="{% url 'student_list' %}">
+    <button>List</button>
+</a>
+
+<br><br>
+
+<hr>
+{{stu.id}} - {{stu.name}} - {{stu.age}}
+<hr>
+
+<ol>
+    {% for student in all_students %}
+        <li>
+            <div><a href="{% url 'student_detail' student.id %}">{{student.name}}</a></div>
+        </li>
+    {% endfor %}
+</ol>
